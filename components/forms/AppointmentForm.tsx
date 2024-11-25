@@ -94,7 +94,6 @@ const AppointmentForm = ({
           status: status as Status,
         };
 
-        console.log("appointment data ", appointmentData);
         const createsAppointment = await databases.createDocument(
           "673d9f15002de1fd5669",
           "673da1ab002c26b498a8",
@@ -122,8 +121,6 @@ const AppointmentForm = ({
           },
           type,
         };
-
-        console.log("Appointment data ", appointmentToUpdate);
 
         // const updatedAppointment = await updateAppointment(appointmentToUpdate);
 

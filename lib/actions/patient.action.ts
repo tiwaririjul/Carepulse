@@ -63,8 +63,6 @@ export const registerPatient = async ({
     //   );
     // }
 
-    console.log("patientsssssssss ", patient);
-
     const {
       email,
       phone,
@@ -110,6 +108,8 @@ export const registerPatient = async ({
       identificationNumber,
       primaryPhysician,
     };
+
+    console.log("data ", data);
 
     const newPatient = await databases.createDocument(
       "673d9f15002de1fd5669",

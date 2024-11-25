@@ -12,8 +12,6 @@ export const createAppointment = async (
 ) => {
   // throw new Error("Missing required fields in appointment data");
 
-  console.log("appointment data ", appointment);
-
   try {
     const newAppointment = await databases.createDocument(
       "673d9f15002de1fd5669",
