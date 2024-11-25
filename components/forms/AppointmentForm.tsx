@@ -122,6 +122,8 @@ const AppointmentForm = ({
           type,
         };
 
+        console.log("appointment to update ", appointmentToUpdate);
+
         // const updatedAppointment = await updateAppointment(appointmentToUpdate);
 
         const updatedAppointment = await databases.updateDocument(
@@ -130,6 +132,8 @@ const AppointmentForm = ({
           appointmentToUpdate.appointmentId,
           appointmentToUpdate.appointment
         );
+
+        console.log("appointment to update ", updatedAppointment);
 
         if (!updatedAppointment) {
           throw new Error("Appointment not found");
@@ -140,8 +144,10 @@ const AppointmentForm = ({
             ? `Your appointment has been scheduled for ${
                 formatDateTime(appointment.schedule!).dateTime
               }  with Dr. ${appointment.primaryPhysician}`
-            : `We regret to inform you that your appointment has been cancelled for the following reason: ${appointment.cancellationReason}`
+            : `We regret to inform you that your appointment has been cancelled`
         }`;
+
+        console.log("herererererer");
 
         // await sendSMSNotification(userId, smsMessage);
 
