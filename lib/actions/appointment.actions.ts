@@ -69,6 +69,8 @@ export const getRecentAppoinmentList = async () => {
       intitialCounts
     );
 
+    // revalidatePath("/admin");
+
     const data = {
       totalCount: appointments.total,
       ...counts,
@@ -144,4 +146,9 @@ export const sendSMSNotification = async (userId: string, content: string) => {
 
     return parseStringify(message);
   } catch (error) {}
+};
+
+export const revalidate = async () => {
+  console.log("Revalidate ");
+  revalidatePath("/admin");
 };

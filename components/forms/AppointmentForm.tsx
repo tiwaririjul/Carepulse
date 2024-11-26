@@ -23,6 +23,7 @@ import { SelectItem } from "../ui/select";
 import { Doctors } from "@/constants";
 import {
   createAppointment,
+  revalidate,
   sendSMSNotification,
   updateAppointment,
 } from "@/lib/actions/appointment.actions";
@@ -132,6 +133,10 @@ const AppointmentForm = ({
           appointmentToUpdate.appointmentId,
           appointmentToUpdate.appointment
         );
+
+        revalidate();
+
+        console.log("Revalidate ");
 
         console.log("appointment to update ", updatedAppointment);
 
