@@ -24,6 +24,7 @@ export const columns: ColumnDef<Appointment>[] = [
     header: "Patient",
     cell: ({ row }) => {
       const appointment = row.original;
+
       return <p className="text-14-medium">{appointment.patient.name}</p>;
     },
   },
@@ -32,7 +33,6 @@ export const columns: ColumnDef<Appointment>[] = [
     header: "Status",
     cell: ({ row }) => {
       const appointment = row.original;
-
       return (
         <div className="min-w-[115px]">
           <StatusBadge status={appointment.status} />
@@ -56,6 +56,7 @@ export const columns: ColumnDef<Appointment>[] = [
     header: () => <div className="text-right">Amount</div>,
     cell: ({ row }) => {
       const appointment = row.original;
+
       const doctor = Doctors.find(
         (doc) => doc.name === appointment.primaryPhysician
       );
